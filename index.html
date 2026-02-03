@@ -14,7 +14,7 @@
       --line:#e5e7eb;
       --card:#f9fafb;
       --link:#2563eb;
-      --max: 920px;
+      --max: 1200px;
       --radius: 14px;
     }
     *{ box-sizing:border-box; }
@@ -30,8 +30,8 @@
     a:hover{ text-decoration:underline; }
     code{ background:#f3f4f6; padding:0 .35em; border-radius:8px; }
 
-    .wrap{ max-width:var(--max); margin:0 auto; padding: 24px 18px 60px; }
-
+    .wrap{ max-width: var(--max); margin: 0 auto; padding: 28px 10px 60px; }
+    
     header{
       padding: 18px 18px 16px;
       border:1px solid var(--line);
@@ -100,6 +100,30 @@
     section h2{ margin:0 0 10px; font-size:1.25rem; letter-spacing:-0.01em; }
     .muted{ color:var(--muted); }
 
+    
+    /*  About 섹션용: 넓은 화면에서는 2열로 */
+    .about-grid{
+      display:grid;
+      grid-template-columns: 1.3fr .9fr;
+      gap: 14px;
+      align-items: start;
+      margin-top: 10px;
+    }
+    .about-box{
+      border:1px solid var(--line);
+      border-radius: 12px;
+      padding: 12px;
+      background: #f9fafb;
+    }
+    .about-box h3{
+      margin: 0 0 8px;
+      font-size: 1.05rem;
+    }
+    .about-list{ margin: 0; padding-left: 1.2rem; }
+    .about-list li{ margin: 6px 0; }
+
+
+    
     /* Papers */
     .publist{ margin:0; padding-left: 1.25rem; }
     .publist li{ margin: 10px 0 14px; }
@@ -174,15 +198,28 @@
 
     <!-- 이 메뉴를 클릭하면 해당 섹션으로 이동 -->
     <nav class="menu" aria-label="Section navigation">
+      <a href="#about">About</a>
       <a href="#papers">Papers</a>
       <a href="#cv">CV</a>
       <a href="#talks">Talks</a>
       <a href="#misc">Misc.</a>
-      <a href="#top">Top</a>
     </nav>
 
     <main aria-label="Main content">
 
+      <section id="about" aria-label="About">
+  <h2>About</h2>
+  <p>
+    I am Kiyoon Eum, a graduate student / researcher in Mathematics at [Your University].
+    My interests include complex geometry and math physics.
+  </p>
+  <ul>
+    <li><b>Research interests:</b> [e.g., Kähler geometry, etc]</li>
+    <li><b>Currently:</b> [what you are working on]</li>
+    <li><b>Contact:</b> <a href="mailto:you@example.com">you@example.com</a></li>
+  </ul>
+</section>
+      
       <section id="papers">
         <h2>Papers</h2>
 
@@ -192,9 +229,7 @@
             <div class="muted">with A. Coauthor · 2026</div>
             <div class="publinks">
               <a class="tag" href="#">arXiv</a>
-              <a class="tag" href="#">PDF</a>
-              <a class="tag" href="#">Journal</a>
-              <a class="tag" href="#">BibTeX</a>
+              <a class="tag" href="https://doi.org/10.1016/j.geomphys.2025.105744">Journal</a>
             </div>
           </li>
         </ol>
