@@ -63,6 +63,42 @@
       border-color: rgba(0,0,0,.12);
     }
 
+/* Header: left text + right photo */
+.header-row{
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 16px;
+}
+
+.header-left{
+  min-width: 0;
+  flex: 1;
+}
+
+/* Profile photo */
+.avatar{
+  width: 120px;
+  height: 120px;
+  border-radius: 14px;   /* 네모+둥근 모서리 */
+  object-fit: cover;     /* 이미지가 찌그러지지 않게 */
+  border: 1px solid var(--line);
+  background: #fff;
+}
+
+/* 작은 화면에서는 위/아래로 쌓이게 */
+@media (max-width: 720px){
+  .header-row{
+    flex-direction: column;
+  }
+  .avatar{
+    width: 96px;
+    height: 96px;
+  }
+}
+
+
+    
     /* 상단 메뉴(섹션 이동용) */
     .menu{
       position: sticky; /* 스크롤해도 상단에 붙어있게 */
@@ -182,6 +218,8 @@
   <div class="wrap">
 
     <header id="top">
+  <div class="header-row">
+    <div class="header-left">
       <h1 class="title">Kiyoon Eum</h1>
       <div class="subtitle">
         Graduate student / researcher in Mathematics · <span class="muted">[Your University / Department]</span>
@@ -194,7 +232,12 @@
         <a class="pill" href="https://scholar.google.com/">Google Scholar</a>
         <a class="pill" href="https://github.com/">GitHub</a>
       </div>
-    </header>
+    </div>
+
+    
+    <img class="avatar" src="assets/20250615_140249.jpg" alt="Picture" />
+  </div>
+</header>
 
     <!-- 이 메뉴를 클릭하면 해당 섹션으로 이동 -->
     <nav class="menu" aria-label="Section navigation">
@@ -240,7 +283,7 @@
 
 <li>
   <div class="pubtitle">Partition functions of determinantal point processes on polarized Kähler manifolds</div>
-  <div class="muted">2026</div>
+  <div class="muted">Journal of Geometry and Physics · 2026</div>
   <div class="publinks">
   <a class="tag" href="https://arxiv.org/abs/2503.01524">arXiv</a>
   <a class="tag" href="https://doi.org/10.1016/j.geomphys.2025.105744">Journal</a>
@@ -318,8 +361,8 @@
 
           <details class="talk">
             <summary class="talk__summary">
-              <span class="talk__left">IST-OMU 1-day meeting on complex geometry</span>
-              <span class="talk__right">Ookayama campus, Institute of Science Tokyo</span>
+              <span class="talk__left">Test</span>
+              <span class="talk__right">12341241412</span>
             </summary>
 
             
