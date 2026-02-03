@@ -1,109 +1,182 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>Your Name - Mathematics</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <style>
-    body {
-      max-width: 800px;
-      margin: 0 auto;
-      padding: 2rem 1rem;
-      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-      line-height: 1.6;
-    }
-    h1, h2, h3 {
-      margin-top: 1.5rem;
-    }
-    a {
-      text-decoration: none;
-    }
-    .name {
-      font-size: 2rem;
-      font-weight: 700;
-    }
-    .affiliation {
-      color: #555;
-    }
-    .section {
-      margin-top: 2rem;
-    }
-    ul {
-      padding-left: 1.2rem;
-    }
-  </style>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Kiyoon Eum — Mathematics</title>
+  <meta name="description" content="Kiyoon Eum — papers, CV, and miscellaneous math materials." />
+  <link rel="stylesheet" href="style.css" />
+
+  <!-- LCD 느낌 폰트(선택). 싫으면 아래 3줄 삭제해도 OK -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=VT323&display=swap" rel="stylesheet">
 </head>
+
 <body>
-  <header>
-    <div class="name">Your Name</div>
-    <div class="affiliation">Graduate student in Mathematics, [Your University]</div>
-    <div>
-      Email: <a href="mailto:you@example.com">you@example.com</a> • 
-      <a href="CV.pdf">CV (PDF)</a> • 
-      <a href="https://arxiv.org/a/your_arxiv_id">arXiv</a> • 
-      <a href="https://scholar.google.com/citations?user=XXXX">Google Scholar</a>
-    </div>
-  </header>
+  <div class="wrap">
 
-  <div class="section">
-    <h2>Research Interests</h2>
-    <ul>
-      <li>Symplectic geometry and Hamiltonian dynamics</li>
-      <li>Metric measure spaces and optimal transport</li>
-      <li>Ricci curvature lower bounds and RCD spaces</li>
-    </ul>
+    <!-- 상단: 이름 키캡 + LCD 패널 -->
+    <header class="top" id="top">
+      <div class="keycap keycap--wide">
+        <div class="name">Kiyoon Eum</div>
+        <div class="meta">
+          Graduate student / researcher in Mathematics<br/>
+          <span class="muted">[Your University / Department]</span><br/>
+          <div class="links">
+            <a href="mailto:you@example.com">you@example.com</a>
+            <span class="dot">·</span>
+            <a href="CV.pdf">CV (PDF)</a>
+            <span class="dot">·</span>
+            <a href="https://arxiv.org/">arXiv</a>
+            <span class="dot">·</span>
+            <a href="https://scholar.google.com/">Google Scholar</a>
+            <span class="dot">·</span>
+            <a href="https://github.com/">GitHub</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="lcd" aria-label="status panel">
+        <div class="lcd__top">
+          <div class="lcd__label">STATUS</div>
+          <div class="leds" aria-hidden="true">
+            <span class="led led--red"></span>
+            <span class="led led--yellow"></span>
+            <span class="led led--green"></span>
+          </div>
+        </div>
+        <div class="lcd__text">
+          Current: <span class="lcd__hl">[topic / project]</span><br/>
+          Next: <span class="lcd__hl">[seminar / talk + date]</span><br/>
+          Update: <span class="lcd__hl">2026-01-26</span>
+        </div>
+      </div>
+    </header>
+
+    <!-- 키보드 느낌 네비게이션: Papers / CV / Misc -->
+    <nav class="keyboard" aria-label="site navigation">
+      <a class="keycap" href="#top">Home</a>
+      <a class="keycap keycap--orange" href="#papers">Papers</a>
+      <a class="keycap keycap--red" href="#cv">CV</a>
+      <a class="keycap keycap--green" href="#misc">Misc.</a>
+      <a class="keycap keycap--blue" href="mailto:you@example.com">Email</a>
+    </nav>
+
+    <main class="content">
+
+      <!-- Papers -->
+      <section id="papers" class="panel">
+        <h2>Papers</h2>
+
+        <ol class="publist">
+          <li class="pub">
+            <div class="pub__title"><b>Title of a paper</b></div>
+            <div class="pub__meta">
+              with A. Coauthor, B. Coauthor — <span class="muted">Year</span>
+            </div>
+            <div class="pub__links">
+              <a class="chip chip--orange" href="#">arXiv</a>
+              <a class="chip chip--blue" href="#">PDF</a>
+              <a class="chip chip--green" href="#">Journal</a>
+              <details class="bib">
+                <summary class="chip chip--gray">BibTeX</summary>
+                <pre>@article{eum2026title,
+  title={...},
+  author={Eum, Kiyoon and ...},
+  year={2026},
+  eprint={...},
+  archivePrefix={arXiv}
+}</pre>
+              </details>
+            </div>
+          </li>
+
+          <li class="pub">
+            <div class="pub__title"><b>Another paper title</b></div>
+            <div class="pub__meta">
+              <span class="muted">Year</span>
+            </div>
+            <div class="pub__links">
+              <a class="chip chip--orange" href="#">arXiv</a>
+              <a class="chip chip--blue" href="#">PDF</a>
+            </div>
+          </li>
+        </ol>
+
+        <p class="hint">
+          Tip: PDF는 <code>papers/</code> 폴더에 넣고 <code>papers/your-paper.pdf</code>로 링크 걸면 관리가 편해.
+        </p>
+      </section>
+
+      <!-- CV -->
+      <section id="cv" class="panel">
+        <h2>CV</h2>
+        <p>
+          <a class="biglink" href="CV.pdf">Download CV (PDF)</a>
+        </p>
+
+        <div class="cvbox" role="note">
+          <div class="cvbox__title">How to update</div>
+          <ul>
+            <li>저장소 루트에 <code>CV.pdf</code> 파일을 업로드하면 위 링크가 자동으로 갱신됨</li>
+            <li>파일명만 꼭 <code>CV.pdf</code>로 유지하면 됨</li>
+          </ul>
+        </div>
+      </section>
+
+      <!-- Misc -->
+      <section id="misc" class="panel">
+        <h2>Misc.</h2>
+
+        <div class="grid2">
+          <div class="subpanel">
+            <h3>Notes / Handouts</h3>
+            <ul>
+              <li><a href="misc/notes-rcd-intro.pdf">Intro to RCD spaces (PDF)</a></li>
+              <li><a href="misc/ot-cheatsheet.pdf">Optimal transport cheatsheet (PDF)</a></li>
+            </ul>
+            <p class="hint">자료는 <code>misc/</code> 폴더에 모아두면 깔끔해.</p>
+          </div>
+
+          <div class="subpanel">
+            <h3>Seminars / Talks</h3>
+            <ul>
+              <li><b>[Talk title]</b> — [Seminar], [Institution], YYYY-MM-DD</li>
+              <li><b>[Talk title]</b> — [Conference], [City], YYYY-MM-DD</li>
+            </ul>
+            <p class="hint">여기는 “최근/예정”만 두고, 많아지면 별도 페이지로 분리해도 좋아.</p>
+          </div>
+        </div>
+
+        <div class="subpanel">
+          <h3>Links</h3>
+          <div class="chips">
+            <a class="chip chip--blue" href="https://github.com/">GitHub</a>
+            <a class="chip chip--orange" href="https://arxiv.org/">arXiv</a>
+            <a class="chip chip--green" href="https://mathoverflow.net/">MathOverflow</a>
+            <a class="chip chip--red" href="#">[Department]</a>
+          </div>
+        </div>
+      </section>
+
+    </main>
+
+    <footer class="footer">
+      <span class="muted">©</span> Kiyoon Eum <span class="dot">·</span>
+      <span class="muted">Last updated:</span> 2026-01-26
+    </footer>
+
   </div>
 
-  <div class="section">
-    <h2>Publications</h2>
-    <ol>
-      <li>
-        <b>Title of Your Paper</b>, Journal/Preprint, Year. <br>
-        with Coauthor1, Coauthor2. 
-        <a href="link_to_arxiv_or_journal">link</a>
-      </li>
-      <!-- Add more items -->
-    </ol>
-  </div>
-
-  <div class="section">
-    <h2>Preprints</h2>
-    <ol>
-      <li>
-        <b>Title of Your Preprint</b>, arXiv:xxxx.xxxxx, Year. 
-        <a href="https://arxiv.org/abs/xxxx.xxxxx">arXiv</a>
-      </li>
-    </ol>
-  </div>
-
-  <div class="section">
-    <h2>Talks & Seminars</h2>
-    <ul>
-      <li>
-        <b>Title of the talk</b>, Seminar name, Institution, Date.
-        <br><i>[online/in-person]</i>
-      </li>
-      <!-- Add more -->
-    </ul>
-  </div>
-
-  <div class="section">
-    <h2>Teaching</h2>
-    <ul>
-      <li>TA, Course name, Semester, [Your University]</li>
-    </ul>
-  </div>
-
-  <div class="section">
-    <h2>Notes & Other Materials</h2>
-    <ul>
-      <li><a href="a">a</a></li>
-    </ul>
-  </div>
-
-  <footer class="section">
-    Last updated: <span>Jan 2026</span>
-  </footer>
+  <!-- (선택) 수식 렌더링이 필요하면 MathJax 켜기: 아래 주석을 해제 -->
+  <!--
+  <script>
+    window.MathJax = { tex: { inlineMath: [['$','$'], ['\\(','\\)']] } };
+  </script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
+  -->
 </body>
 </html>
+
 
