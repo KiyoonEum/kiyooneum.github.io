@@ -1,0 +1,364 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Kiyoon Eum — Mathematics</title>
+  <meta name="description" content="Kiyoon Eum — papers, CV, and miscellaneous materials." />
+
+  <style>
+    :root{
+      --bg: #ffffff;
+      --fg: #111827;      /* near-black */
+      --muted: #6b7280;   /* gray */
+      --line: #e5e7eb;    /* border */
+      --card: #f9fafb;    /* light card */
+      --link: #2563eb;    /* blue */
+      --pill: #111827;    /* dark */
+      --pillText: #ffffff;
+      --max: 920px;
+      --radius: 14px;
+    }
+
+    *{ box-sizing: border-box; }
+    html, body{ height: 100%; }
+    body{
+      margin: 0;
+      font-family: system-ui, -apple-system, Segoe UI, Roboto, sans-serif;
+      color: var(--fg);
+      background: var(--bg);
+      line-height: 1.65;
+    }
+
+    a{ color: var(--link); text-decoration: none; }
+    a:hover{ text-decoration: underline; }
+
+    .wrap{
+      max-width: var(--max);
+      margin: 0 auto;
+      padding: 28px 18px 60px;
+    }
+
+    .skip{
+      position: absolute;
+      left: -999px;
+      top: auto;
+      width: 1px;
+      height: 1px;
+      overflow: hidden;
+    }
+    .skip:focus{
+      left: 18px;
+      top: 18px;
+      width: auto;
+      height: auto;
+      padding: 10px 12px;
+      background: #111827;
+      color: #fff;
+      border-radius: 10px;
+      z-index: 10;
+    }
+
+    header{
+      padding: 18px 18px 16px;
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      background: var(--card);
+    }
+
+    .title{
+      margin: 0;
+      font-size: 2rem;
+      letter-spacing: -0.02em;
+    }
+
+    .subtitle{
+      margin-top: 6px;
+      color: var(--muted);
+    }
+
+    .links{
+      margin-top: 12px;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      align-items: center;
+    }
+
+    .pill{
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 8px 10px;
+      border-radius: 999px;
+      border: 1px solid var(--line);
+      color: var(--fg);
+      background: #fff;
+      font-size: 0.95rem;
+    }
+
+    .pill--dark{
+      background: var(--pill);
+      color: var(--pillText);
+      border-color: rgba(0,0,0,0.15);
+    }
+
+    nav{
+      margin: 16px 2px 24px;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+    nav a{
+      color: var(--fg);
+      padding: 8px 10px;
+      border-radius: 10px;
+      border: 1px solid var(--line);
+      background: #fff;
+    }
+    nav a:hover{
+      text-decoration: none;
+      background: #f3f4f6;
+    }
+
+    main{
+      display: grid;
+      gap: 16px;
+    }
+
+    section{
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      background: #fff;
+      padding: 18px;
+    }
+
+    section h2{
+      margin: 0 0 10px;
+      letter-spacing: -0.01em;
+      font-size: 1.25rem;
+    }
+
+    .muted{ color: var(--muted); }
+
+    /* Papers */
+    .publist{
+      margin: 0;
+      padding-left: 1.25rem;
+    }
+    .publist li{
+      margin: 10px 0 14px;
+    }
+    .pubtitle{
+      font-weight: 700;
+    }
+    .publinks{
+      margin-top: 6px;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      font-size: 0.95rem;
+    }
+    .tag{
+      display: inline-flex;
+      align-items: center;
+      padding: 6px 9px;
+      border-radius: 999px;
+      border: 1px solid var(--line);
+      background: #f9fafb;
+      color: var(--fg);
+      font-size: 0.9rem;
+    }
+
+    /* Talks: collapsible */
+    .talklist{
+      display: grid;
+      gap: 10px;
+      margin-top: 10px;
+    }
+
+    details.talk{
+      border: 1px solid var(--line);
+      border-radius: 12px;
+      background: #fff;
+      overflow: hidden;
+    }
+
+    summary.talk__summary{
+      list-style: none;
+      cursor: pointer;
+      padding: 12px 12px;
+      display: flex;
+      gap: 12px;
+      align-items: flex-start;
+      justify-content: space-between;
+      background: #f9fafb;
+    }
+    summary.talk__summary::-webkit-details-marker{ display:none; }
+    summary.talk__summary::marker{ content:""; }
+
+    .talk__left{
+      font-weight: 700;
+      letter-spacing: -0.01em;
+    }
+    .talk__right{
+      color: var(--muted);
+      text-align: right;
+    }
+
+    .talk__body{
+      padding: 12px 12px 14px;
+      border-top: 1px solid var(--line);
+      background: #fff;
+    }
+
+    .talk__body p{
+      margin: 8px 0 0;
+    }
+
+    /* Footer */
+    footer{
+      margin-top: 18px;
+      color: var(--muted);
+      font-size: 0.95rem;
+      padding: 6px 2px;
+    }
+
+    /* Small screens */
+    @media (max-width: 720px){
+      summary.talk__summary{
+        flex-direction: column;
+      }
+      .talk__right{ text-align: left; }
+    }
+  </style>
+</head>
+
+<body>
+  <a class="skip" href="#content">Skip to content</a>
+
+  <div class="wrap">
+    <header>
+      <h1 class="title">Kiyoon Eum</h1>
+      <div class="subtitle">
+        Graduate student / researcher in Mathematics · <span class="muted">[Your University / Department]</span>
+      </div>
+
+      <div class="links">
+        <a class="pill pill--dark" href="mailto:you@example.com">you@example.com</a>
+        <a class="pill" href="CV.pdf">CV (PDF)</a>
+        <a class="pill" href="https://arxiv.org/">arXiv</a>
+        <a class="pill" href="https://scholar.google.com/">Google Scholar</a>
+        <a class="pill" href="https://github.com/">GitHub</a>
+      </div>
+    </header>
+
+    <nav aria-label="Section navigation">
+      <a href="#papers">Papers</a>
+      <a href="#cv">CV</a>
+      <a href="#misc">Misc.</a>
+    </nav>
+
+    <main id="content" aria-label="Main content">
+
+      <section id="papers" aria-label="Papers">
+        <h2>Papers</h2>
+
+        <ol class="publist">
+          <li>
+            <div class="pubtitle">Title of a paper</div>
+            <div class="muted">with A. Coauthor, B. Coauthor · 2026</div>
+            <div class="publinks">
+              <a class="tag" href="#">arXiv</a>
+              <a class="tag" href="#">PDF</a>
+              <a class="tag" href="#">Journal</a>
+              <a class="tag" href="#">BibTeX</a>
+            </div>
+          </li>
+
+          <li>
+            <div class="pubtitle">Another paper title</div>
+            <div class="muted">2025</div>
+            <div class="publinks">
+              <a class="tag" href="#">arXiv</a>
+              <a class="tag" href="#">PDF</a>
+            </div>
+          </li>
+        </ol>
+
+        <p class="muted" style="margin-top:12px;">
+          Tip: 논문 PDF는 <code>papers/</code> 폴더에 모아두고 <code>papers/xxx.pdf</code>로 링크 걸면 관리하기 좋아요.
+        </p>
+      </section>
+
+      <section id="cv" aria-label="CV">
+        <h2>CV</h2>
+        <p>
+          <a class="pill pill--dark" href="CV.pdf">Download CV (PDF)</a>
+        </p>
+        <p class="muted">
+          저장소 루트에 <code>CV.pdf</code>를 업로드하면 이 링크는 그대로 유지됩니다.
+        </p>
+      </section>
+
+      <section id="misc" aria-label="Miscellaneous">
+        <h2>Misc.</h2>
+
+        <h3 style="margin: 10px 0 6px; font-size:1.05rem;">Notes / Materials</h3>
+        <ul style="margin: 0 0 14px;">
+          <li><a href="aaa">aaa (PDF)</a></li>
+          
+        </ul>
+
+        <h3 style="margin: 10px 0 6px; font-size:1.05rem;">Talks</h3>
+        <div class="talklist">
+
+          <!-- 접힌 상태: Seminar name + location만 보임 -->
+          <details class="talk">
+            <summary class="talk__summary">
+              <span class="talk__left">IST-OMU 1-day meeting on complex geometry</span>
+              <span class="talk__right">Ookayama campus, Institute of Science Tokyo</span>
+            </summary>
+
+            <!-- 펼쳤을 때: Title + Abstract -->
+            <div class="talk__body">
+              <div><b>Title:</b> Asymptotic expansion of the variation of the Quillen metric and its moment map interpretation</div>
+              <div style="margin-top:10px;">
+                <b>Abstract:</b>
+                <p>
+                  The Donaldson–Fujiki moment map picture interprets the scalar curvature of a Kähler metric as a moment map for the action of Hamiltonian diffeomorphisms on the space of compatible complex structures.
+                  We generalize this picture to other scalar curvature quantities using equivariant determinant line bundles.
+                  Interpreting the complexified orbit as varying Kähler potentials while keeping the complex structure fixed, these moment maps arise as variations of the log of the Quillen metric on determinant line bundles.
+                  This framework also naturally yields other GIT counterparts, such as log-norm functionals (~Mabuchi functional) and weights (~Futaki invariant).
+                </p>
+              </div>
+
+              <!-- 필요하면 링크 추가 -->
+              <!--
+              <div class="publinks" style="margin-top:10px;">
+                <a class="tag" href="#">Slides</a>
+                <a class="tag" href="#">Event page</a>
+              </div>
+              -->
+            </div>
+          </details>
+
+        </div>
+      </section>
+
+    </main>
+
+    <footer>
+      Last updated: 2026-02-03
+    </footer>
+  </div>
+
+  <!-- 수식 렌더링이 필요하면 아래 주석 해제 (MathJax) -->
+ 
+  <script>
+    window.MathJax = { tex: { inlineMath: [['$','$'], ['\\(','\\)']] } };
+  </script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
+  
+</body>
+</html>
