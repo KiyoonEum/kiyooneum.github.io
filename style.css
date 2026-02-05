@@ -254,22 +254,25 @@ details.cv[open] summary.cv__summary::after{
 /* “기간 | 내용” 2열 레이아웃 */
 .cv__item{
   display: grid;
-  grid-template-columns: 120px 1fr;
+  grid-template-columns: minmax(0, 1fr) max-content; /*  왼쪽 최대, 오른쪽은 딱 필요한 만큼 */
   gap: 12px;
   padding: 8px 0;
   border-bottom: 1px solid var(--line);
+  align-items: baseline;
 }
-.cv__item:last-child{ border-bottom: none; }
 
 .cv__what{
-  min-width: 0;
+  min-width: 0; /*  긴 텍스트가 제대로 줄바꿈 되도록(그리드에서 중요) */
 }
 
 .cv__when{
+  white-space: nowrap;  /*  기간은 한 줄 유지 */
+  text-align: right;    /*  오른쪽 정렬 */
   color: var(--muted);
   font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
   font-size: .95rem;
 }
+
 
 .cv__bullets{
   margin: 6px 0 0;
