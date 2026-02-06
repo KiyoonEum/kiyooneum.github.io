@@ -273,6 +273,12 @@ details.cv[open] summary.cv__summary::after{
   font-size: .95rem;
 }
 
+.cv__bullets{
+  margin: 6px 0 0;
+  padding-left: 1.2rem;
+}
+
+
 .cv__item--teaching{
   display: grid !important;
   grid-template-columns: minmax(0, 1fr) fit-content(260px);
@@ -298,17 +304,20 @@ details.cv[open] summary.cv__summary::after{
 
 
 
-
-.cv__bullets{
-  margin: 6px 0 0;
-  padding-left: 1.2rem;
-}
-
 /* 모바일에서는 1열로 */
 @media (max-width: 720px){
   .cv__item{
     grid-template-columns: 1fr;
     gap: 4px;
+  }
+}
+
+@media (max-width: 720px){
+  .cv__item--teaching{
+    grid-template-columns: 1fr;
+  }
+  .cv__item--teaching .cv__when{
+    text-align: left;
   }
 }
 
