@@ -273,6 +273,28 @@ details.cv[open] summary.cv__summary::after{
   font-size: .95rem;
 }
 
+/* ✅ Teaching은 grid 대신 flex로 강제: 왼쪽(내용) 최대 확보 */
+.cv__item--teaching{
+  display: flex !important;
+  align-items: baseline;
+  gap: 12px;
+}
+
+.cv__item--teaching .cv__what{
+  flex: 1 1 auto;   /* ✅ 왼쪽이 최대한 넓게 */
+  min-width: 0;     /* ✅ flex에서 줄바꿈 계산 안정화 */
+}
+
+.cv__item--teaching .cv__when{
+  flex: 0 0 auto;   /* ✅ 오른쪽은 필요한 만큼만 */
+  white-space: nowrap;
+  text-align: right;
+  color: var(--muted);
+  font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+  font-size: .95rem;
+}
+
+
 
 .cv__bullets{
   margin: 6px 0 0;
