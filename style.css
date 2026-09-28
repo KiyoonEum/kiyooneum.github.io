@@ -308,3 +308,11 @@ summary::marker { content: ""; }
   .cv__when { text-align: right; }
   a { color: inherit; }
 }
+
+/* 발표 날짜 */
+.talk-date {
+  margin-top: 5px;
+  color: var(--muted);
+  font-size: 12px;
+  font-variant-numeric: tabular-nums;
+}
