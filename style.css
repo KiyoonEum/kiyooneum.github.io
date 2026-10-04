@@ -309,6 +309,12 @@ summary::marker { content: ""; }
   a { color: inherit; }
 }
 
+.talk-event a {
+  color: inherit;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
 /* 발표 날짜 */
 .talk-date {
   margin-top: 5px;
