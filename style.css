@@ -316,9 +316,3 @@ summary::marker { content: ""; }
   font-size: 12px;
   font-variant-numeric: tabular-nums;
 }
-
-.talk-location a {
-  color: inherit;
-  text-decoration: underline;
-  text-underline-offset: 3px;
-}
