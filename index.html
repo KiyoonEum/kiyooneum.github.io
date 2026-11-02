@@ -18,6 +18,7 @@
   <meta name="theme-color" content="#d8f1ff">
   <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
   <link rel="stylesheet" href="style.css?v=20260916-1">
+  <link rel="stylesheet" href="home-layout.css?v=20261102-2">
   <script src="navigation.js?v=20260916-1" defer></script>
 </head>
 <body class="page-home">
@@ -31,12 +32,18 @@
     <main id="main" tabindex="-1">
       <!-- 소개: 이름 / 직책 / 연구 관심사 / 이메일 / 사진을 여기서 수정합니다. -->
       <section class="home-hero" aria-labelledby="hero-name" id="about">
-        <div class="hero-copy">
-          <div class="profile-heading"><img class="portrait" src="assets/20250615_140249.jpg" alt="Portrait of Kiyoon Eum" width="78" height="78"><h1 id="hero-name">Kiyoon Eum</h1></div>
-          <p class="hero-role">Graduate student in Mathematics</p>
-          <p class="hero-affiliation">Korea Advanced Institute of Science and Technology</p>
-          <p class="hero-bio" id="research">My interests include complex geometry<br class="desktop-break"> and mathematical physics.</p>
-          <div class="hero-links"><a class="aqua-button" href="mailto:kyeum@kaist.ac.kr">Email <span aria-hidden="true">↗</span></a><a class="text-link" href="https://scholar.google.com/citations?user=Wr7Ld9QAAAAJ&amp;hl=en">Google Scholar <span aria-hidden="true">↗</span></a></div>
+        <!-- 실제 수국 사진은 아래쪽이 아쿠아 배경으로 서서히 희미해집니다. -->
+        <img class="hero-banner" src="assets/hydrangeas.jpg" alt="Pink and purple hydrangeas" width="1600" height="1200" fetchpriority="high">
+        <div class="hero-profile-row">
+          <div class="hero-copy">
+            <div class="profile-heading"><h1 id="hero-name">Kiyoon Eum</h1></div>
+            <p class="hero-role">Graduate student in Mathematics</p>
+            <p class="hero-affiliation">Korea Advanced Institute of Science and Technology</p>
+            <p class="hero-bio" id="research">My interests include complex geometry<br class="desktop-break"> and mathematical physics.</p>
+            <div class="hero-links"><a class="aqua-button" href="mailto:kyeum@kaist.ac.kr">Email <span aria-hidden="true">↗</span></a><a class="text-link" href="https://scholar.google.com/citations?user=Wr7Ld9QAAAAJ&amp;hl=en">Google Scholar <span aria-hidden="true">↗</span></a></div>
+          </div>
+          <!-- 인물 사진: 원본 20230715_151549.jpg의 웹용 축소본입니다. -->
+          <img class="portrait" src="assets/portrait.jpg" alt="Portrait of Kiyoon Eum" width="900" height="675">
         </div>
       </section>
       <!-- 각 버튼은 별도 HTML 페이지로 이동합니다. -->
